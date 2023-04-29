@@ -1,0 +1,12 @@
+* {
+  font-family: 'Fira Code', monospace;
+  color-scheme: dark;
+}
+
+a {
+    color: grey;
+}
+
+body, pre {
+    margin: 0;
+}
