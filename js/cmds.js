@@ -1,3 +1,9 @@
 export async function handle(input, output) {
-    output.innerHTML += '   ' + eval(input) + '\n\n';
+    switch (input) {
+        case "help":
+            output.innerHTML += 'Nothing Yet.';
+            break;
+        default:
+            output.innerHTML += 'Command "' + input + '" Not Found.';
+    }
 }
