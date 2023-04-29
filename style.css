@@ -1,3 +1,12 @@
+input, label {
+    all: unset;
+    display: inline;
+}
+
+label {
+    
+}
+
 * {
   font-family: 'Fira Code', monospace;
   color-scheme: dark;
@@ -9,4 +18,10 @@ a {
 
 body, pre {
     margin: 0;
+}
+
+.prompt {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15em 1fr;
 }
