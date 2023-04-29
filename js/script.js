@@ -1,2 +1,2 @@
-import "/js/color.js";
-import "/js/shell.js";
+import "./color.js";
+import "./shell.js";
