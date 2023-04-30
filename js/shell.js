@@ -13,6 +13,7 @@ Type <span data-color="yellow">help</span> For List Of Available Commands
 `;
 const terminal = document.querySelector('pre')
 terminal.innerHTML = welcome;
+const history = [];
 
 let prompt = document.querySelector('#prompt-template').content.cloneNode(true);
 terminal.appendChild(prompt);
@@ -21,7 +22,9 @@ window.onkeypress = async (e) => {
   if (e.keyCode === 13) {
     let prompts = document.querySelectorAll('[name="prompt"]');
     prompts[prompts.length - 1].setAttribute('readonly', true);
-    await handle(prompts[prompts.length - 1].value, terminal);
+    
+    await handle(prompts[prompts.length - 1].value, terminal, history);
+    history.push(prompts[prompts.length - 1].value);
 
     prompt = document.querySelector('#prompt-template').content.cloneNode(true);
     terminal.appendChild(prompt);
