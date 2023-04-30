@@ -1,3 +1,7 @@
 export default function(output, ...args) {
-    output.innerHTML += eval(args.join(" "));
+    try {
+        output.innerHTML += eval(args.join(" "));
+    } catch (e) {
+        output.innerHTML += '<span data-color="red">' + e + '</span>'
+    }
 }
