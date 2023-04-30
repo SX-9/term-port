@@ -5,6 +5,7 @@ input, label {
 
 label {
     text-align: right;
+    white-space: normal;
 }
 
 * {
@@ -12,13 +13,13 @@ label {
   color-scheme: dark;
 }
 
-a {
-    color: grey;
-}
-
 body {
     margin: 0;
     padding: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
 }
 
 .prompt {
@@ -26,5 +27,5 @@ body {
     width: 100%;
     display: grid;
     gap: 1em;
-    grid-template-columns: 11em 1fr 1em;
+    grid-template-columns: 11em 1fr;
 }

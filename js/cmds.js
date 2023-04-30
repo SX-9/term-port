@@ -5,6 +5,11 @@ import hostname from "./cmds/hostname.js";
 import clear from "./cmds/clear.js";
 import echo from "./cmds/echo.js";
 import execute from "./cmds/eval.js";
+import projects from "./cmds/projects.js";
+import quote from "./cmds/quote.js";
+import source from "./cmds/source.js";
+import about from "./cmds/about.js";
+import socials from "./cmds/socials.js";
 
 export async function handle(input, output, hist) {
     let exec = input.split(' ');
@@ -32,6 +37,21 @@ export async function handle(input, output, hist) {
             break;
         case "eval":
             execute(output, ...args);
+            break;
+        case "about":
+            about(output);
+            break;
+        case "socials":
+            socials(output);
+            break;
+        case "projects":
+            await projects(output);
+            break;
+        case "quote":
+            quote(output);
+            break;
+        case "source":
+            source(output);
             break;
         case "": break;
         default:
