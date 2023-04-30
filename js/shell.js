@@ -20,8 +20,13 @@ terminal.appendChild(prompt);
 
 window.onkeypress = async (e) => {
   if (e.keyCode === 13) {
-    let prompts = document.querySelectorAll('[name="prompt"]');
+    let prompts = document.querySelectorAll('.prompt-cmd');
     prompts[prompts.length - 1].setAttribute('readonly', true);
+    
+    let last = document.querySelectorAll('.prompt');
+    last[last.length - 1].innerHTML += '<span data-color="grey">' + prompts[prompts.length - 1].value + '</span>';
+    console.log(prompts.length)
+    prompts[prompts.length - 1].remove();
     
     await handle(prompts[prompts.length - 1].value, terminal, history);
     history.push(prompts[prompts.length - 1].value);
@@ -29,7 +34,7 @@ window.onkeypress = async (e) => {
     prompt = document.querySelector('#prompt-template').content.cloneNode(true);
     terminal.appendChild(prompt);
 
-    prompts = document.querySelectorAll('[name="prompt"]');
+    prompts = document.querySelectorAll('.prompt-cmd');
     prompts[prompts.length - 1].focus();
   }
 }

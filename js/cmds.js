@@ -2,6 +2,7 @@ import help from "./cmds/help.js";
 import history from "./cmds/history.js";
 import whoami from "./cmds/whoami.js";
 import hostname from "./cmds/hostname.js";
+import clear from "./cmds/clear.js";
 import echo from "./cmds/echo.js";
 import execute from "./cmds/eval.js";
 
@@ -23,12 +24,16 @@ export async function handle(input, output, hist) {
         case "hostname":
             hostname(output);
             break;
+        case "clear":
+            clear(output);
+            break;
         case "echo":
             echo(output, ...args);
             break;
         case "eval":
             execute(output, ...args);
             break;
+        case "": break;
         default:
             output.innerHTML += 'Command <span data-color=grey>"' + input + '"</span> Not Found.';
     }
