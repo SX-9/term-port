@@ -1,11 +1,12 @@
 export default async function (output) {
-  let repositories = await fetch(
-    "https://api.github.com/users/SX-9/repos?type=owner&sort=created"
-  )
-    .then((r) => r.json())
-    .catch(
-      (e) => (output.innerHTML += '<span data-color="red">' + e + "</span>")
-    );
+  let repositories;
+  try {
+    await fetch("https://api.github.com/users/SX-9/repos?type=owner&sort=created")
+      .then((r) => r.json());
+  } catch (e) {
+    output.innerHTML += '<span data-color="red">' + e + "</span>";
+    return;
+  }
 
   const nonForkedRepositories = repositories
     .filter((repo) => !repo.fork)

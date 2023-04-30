@@ -1,7 +1,7 @@
 import { handle } from "./cmds.js";
 
 const msg = "Welcome To " + navigator.platform + "!";
-const welcome = `\
+const welcome = `<div class="nomobile">\
           /\\    <span data-color="red">|></span>      <span data-color="lime">  ______                        ____                __   </span>
    <span data-color="red"><|</span>    /  \\<span data-color="orange">__</span>/ \\      <span data-color="lime"> /_  __/___   _____ ____ ___   / __ \\ ____   _____ / /_  </span>
    / \\<span data-color="orange">__</span>/<span data-color="orange">----</span>\\/   \\     <span data-color="lime">  / /  / _ \\ / ___// __ \`__ \\ / /_/ // __ \\ / ___// __/ </span>
@@ -9,7 +9,7 @@ const welcome = `\
  /     \\       \\    \\   <span data-color="lime">/_/   \\___//_/   /_/ /_/ /_//_/     \\____//_/    \\__/    </span>
 <span data-color="cyan"><~~~~~~~~~~~~~~~~~~~~></span>        <span data-color="grey">===> Terminal Portfolio | Made By <a href="https://sx9.is-a.dev">sx9dev</a></span>
 
-Type <span data-color="yellow">help</span> For List Of Available Commands
+</div>Type <span data-color="yellow">help</span> For List Of Available Commands
 
 `;
 const sleep = (m) => new Promise((r) => setTimeout(r, m));
