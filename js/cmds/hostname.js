@@ -1,3 +1,5 @@
 export default function(output) {
-    output.innerHTML += "term-port";
+    let a = navigator.userAgent;
+    let os = a.slice(a.indexOf('(') + 1, a.indexOf(')')).split('; ');
+    output.innerHTML += os;
 }

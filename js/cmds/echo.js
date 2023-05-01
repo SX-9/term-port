@@ -1,3 +1,3 @@
-export default function(output, ...args) {
+export default function(output, _hist, ...args) {
     output.innerHTML += args.join(" ");
 }

@@ -1,4 +1,4 @@
-export default function(output, ...args) {
+export default function(output, _hist, ...args) {
     try {
         output.innerHTML += eval(args.join(" "));
     } catch (e) {

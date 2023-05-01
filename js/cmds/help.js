@@ -2,7 +2,7 @@ export default function(output) {
     output.innerHTML += `\
 Here Is A List Of Commands:
     <span data-color="lime">help</span> <span data-color="grey">-</span> <span data-color="yellow">Displays This.</span>
-    <span data-color="lime">quote</span> <span data-color="grey">-</span> <span data-color="yellow">Just A Quote I Made.</span>
+    <span data-color="lime">quote</span> <span data-color="grey">-</span> <span data-color="yellow">Just Some Random Quotes.</span>
     <span data-color="lime">about</span> <span data-color="grey">-</span> <span data-color="yellow">Who Is This?</span>
     <span data-color="lime">projects</span> <span data-color="grey">-</span> <span data-color="yellow">My Github Repos!</span>
     <span data-color="lime">socials</span> <span data-color="grey">-</span> <span data-color="yellow">Contact Me Here!</span>
