@@ -1,5 +1,5 @@
 export default function(output) {
     output.innerHTML += `\
-Hey there, I'm Satria! I'm a self-taught web developer with a passion for coding and biking. I've been coding since 2021, with experience in Node.js, web development, and Linux. My interest in low-level systems, circuitry, and machine learning keeps me engaged and curious. I'm fluent in HTML, CSS, and JavaScript, and I enjoy learning new languages and frameworks. As an introverted student, I enjoy spending time improving my skills and working on personal projects. If you want to connect with another coding enthusiast, don't hesitate to reach out!\
+Hi, I'm Satria, a self-taught web developer from Indonesia. I've been coding since 2021 and have experience with Node.js, web development, and Linux. As a student, I love spending my free time coding and experimenting with new technologies. My interests include machine learning, low-level systems, and circuitry. I'm an introvert by nature and prefer to spend most of my time working on personal projects. Thanks for taking the time to learn a little more about me!\
 `;
 }
