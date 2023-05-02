@@ -16,6 +16,6 @@ Extra Commands For Fun:
     <span data-color="lime">hostname</span> <span data-color="grey">-</span> <span data-color="yellow">What Is This?</span>
     <span data-color="lime">echo [text]</span> <span data-color="grey">-</span> <span data-color="yellow">Prints [text].</span>
     <span data-color="lime">eval [code]</span> <span data-color="grey">-</span> <span data-color="yellow">Eval [code] As JS.</span>
-    <span data-color="lime">google [query]</span> <span data-color="grey">-</span> <span data-color="yellow">Google It!</span>
+    <span data-color="lime">search [query]</span> <span data-color="grey">-</span> <span data-color="yellow">Google It!</span>
 `;
 }
