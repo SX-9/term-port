@@ -34,16 +34,23 @@ window.addEventListener("DOMContentLoaded", () => {
   };
   window.onkeydown = async (e) => {
     let prompts = document.querySelectorAll("input");
-
+    let command = prompts[prompts.length - 1];
     if (e.key === "Enter") {
-      prompts[prompts.length - 1].setAttribute(
-        "placeholder",
-        prompts[prompts.length - 1].value
-      );
-      prompts[prompts.length - 1].setAttribute("readonly", true);
+      command.setAttribute("placeholder", command.value);
+      command.setAttribute("readonly", true);
+      document.querySelectorAll('.help').forEach((el) => el.parentElement.remove());
 
-      await handle(prompts[prompts.length - 1].value, terminal, history);
-      history.push(prompts[prompts.length - 1].value);
+			await sleep(250);
+      if (command.value.includes("&&")) {
+				let runs = command.value.split(' && ');
+				for (let cmds of runs) {
+					await handle(cmds, terminal, history);
+					terminal.innerHTML += '\n';
+				}
+      } else {
+				await handle(command.value, terminal, history);
+      }
+      history.push(command.value);
 
       prompt = document
         .querySelector("#prompt-template")
@@ -52,10 +59,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
       prompts = document.querySelectorAll("input");
       prompts[prompts.length - 1].focus();
+      document.body.scrollTop = document.body.scrollHeight;
     } else if (e.key === "ArrowUp") {
-      prompts[prompts.length - 1].value = history[history.length - 1];
+      command.value = history[history.length - 1];
     } else if (e.key === "ArrowDown") {
-      prompts[prompts.length - 1].value = "";
+      command.value = "";
     }
   };
 });

@@ -14,24 +14,30 @@ label {
 }
 
 body {
-    margin: 0;
-    padding: 1em;
+    background-color: #010722;
+    overflow-x: hidden;
 }
 
-pre {
+pre:not(.prompt) {
+    overflow-wrap: break-word;
     white-space: pre-wrap;
 }
 
 a {
-    color: inherit !important ;
+    color: inherit !important;
+}
+
+p {
+    margin: 0;
+    text-align: right;
 }
 
 .prompt {
     padding: 0;
     width: 100%;
     display: grid;
-    gap: 1em;
-    grid-template-columns: 11em 1fr;
+    gap: .5em;
+    grid-template-columns: 11.5em 1fr 4.3em;
 }
 
 .mobile {
