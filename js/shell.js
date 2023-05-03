@@ -1,13 +1,13 @@
 import { handle } from "./cmds.js";
 
 const msg = "Welcome To " + navigator.platform + "!";
-const welcome = `<div class="nomobile">\
-          /\\    <span data-color="red">|></span>      <span data-color="lime">  ______                        ____                __   </span>
-   <span data-color="red"><|</span>    /  \\<span data-color="orange">__</span>/ \\      <span data-color="lime"> /_  __/___   _____ ____ ___   / __ \\ ____   _____ / /_  </span>
-   / \\<span data-color="orange">__</span>/<span data-color="orange">----</span>\\/   \\     <span data-color="lime">  / /  / _ \\ / ___// __ \`__ \\ / /_/ // __ \\ / ___// __/ </span>
-  /<span data-color="orange">---</span>\\/      \\    \\    <span data-color="lime"> / /  /  __// /   / / / / / // ____// /_/ // /   / /_    </span>
- /     \\       \\    \\   <span data-color="lime">/_/   \\___//_/   /_/ /_/ /_//_/     \\____//_/    \\__/    </span>
-<span data-color="cyan"><~~~~~~~~~~~~~~~~~~~~></span>        <span data-color="grey">===> Terminal Portfolio | Made By <a href="https://sx9.is-a.dev">sx9dev</a></span>
+const welcome = `<div class="nomobile">
+          /\\    <span data-color="red">|></span>      <span data-color="lime">  ______                        ____                __</span>
+   <span data-color="red"><|</span>    /  \\<span data-color="orange">__</span>/ \\      <span data-color="lime"> /_  __/___   _____ ____ ___   / __ \\ ____   _____ / /_</span>
+   / \\<span data-color="orange">__</span>/<span data-color="orange">----</span>\\/   \\     <span data-color="lime">  / /  / _ \\ / ___// __ \`__ \\ / /_/ // __ \\ / ___// __/</span>
+  /<span data-color="orange">---</span>\\/      \\    \\    <span data-color="lime"> / /  /  __// /   / / / / / // ____// /_/ // /   / /_</span>
+ /     \\       \\    \\   <span data-color="lime">/_/   \\___//_/   /_/ /_/ /_//_/     \\____//_/    \\__/</span>
+<span data-color="cyan"><~~~~~~~~~~~~~~~~~~~~></span>        <span data-color="grey">===> Terminal Portfolio | Made By <a href="https://new.sx9.is-a.dev">sx9dev</a></span>
 
 </div>Type <span data-color="yellow">help</span> For List Of Available Commands
 
@@ -23,14 +23,14 @@ setTimeout(async () => {
     await sleep(100);
   }
   await sleep(1500);
-  terminal.innerHTML = welcome;
+  terminal.innerHTML += welcome;
   terminal.appendChild(prompt);
 }, 500);
 
 window.addEventListener("DOMContentLoaded", () => {
   document.onclick = () => {
     let prompts = document.querySelectorAll("input");
-    prompts[prompts.length - 1].focus();
+    if (!window.getSelection().toString()) prompts[prompts.length - 1].focus();
   };
   window.onkeydown = async (e) => {
     let prompts = document.querySelectorAll("input");
@@ -38,17 +38,19 @@ window.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Enter") {
       command.setAttribute("placeholder", command.value);
       command.setAttribute("readonly", true);
-      document.querySelectorAll('.help').forEach((el) => el.parentElement.remove());
+      document
+        .querySelectorAll(".help")
+        .forEach((el) => el.parentElement.remove());
 
-			await sleep(250);
+      await sleep(250);
       if (command.value.includes("&&")) {
-				let runs = command.value.split(' && ');
-				for (let cmds of runs) {
-					await handle(cmds, terminal, history);
-					terminal.innerHTML += '\n';
-				}
+        let runs = command.value.split(" && ");
+        for (let cmds of runs) {
+          await handle(cmds, terminal, history);
+          terminal.innerHTML += "\n";
+        }
       } else {
-				await handle(command.value, terminal, history);
+        await handle(command.value, terminal, history);
       }
       history.push(command.value);
 

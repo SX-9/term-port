@@ -29,12 +29,14 @@ export default async function (output, _hist, ...args) {
       (a, b) => new Date(b.created_at) - new Date(a.created_at)
     );
 
+    output.innerHTML += '\n';
+
     repositoriesInfo.forEach((repo) => {
-      output.innerHTML += `\<span data-color="cyan"><a href="${repo.link}">${repo.name}</a></span> <span data-color="yellow">${repo.stars}</span> <span data-color="grey">-</span> ${repo.description}\n`;
+      output.innerHTML += `\<span data-color="cyan"><a href="${repo.link}">${repo.name}</a></span> <span data-color="yellow">${repo.stars}</span> <span data-color="grey">|==>></span> ${repo.description}\n`;
     });
 
     output.innerHTML += `
-<span data-color="grey">---------------------------------------</span>
-View More On My <span><a href="https://github.com/SX-9?tab=repositories">Github</a></span>`;
+View More On My <span><a href="https://github.com/SX-9?tab=repositories">Github</a></span>\n
+`;
   }
 }

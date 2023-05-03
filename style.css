@@ -3,6 +3,10 @@ input, label {
     display: inline;
 }
 
+input {
+    caret-color: cyan;
+}
+
 label {
     text-align: right;
     white-space: normal;
@@ -11,11 +15,22 @@ label {
 * {
   font-family: 'Fira Code', monospace;
   color-scheme: dark;
+  cursor: text;
+  scroll-behavior: smooth;
 }
 
 body {
     background-color: #010722;
     overflow-x: hidden;
+}
+
+*::selection {
+    background-color: #036363;
+    text-shadow: .1em .1em .5em #000;
+}
+
+pre *, pre {
+    text-shadow: .1em .1em .5em #3d3d3d;
 }
 
 pre:not(.prompt) {
@@ -25,6 +40,11 @@ pre:not(.prompt) {
 
 a {
     color: inherit !important;
+}
+
+a:hover {
+    background-color: white;
+    color: black !important;
 }
 
 p {
