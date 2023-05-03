@@ -7,9 +7,9 @@ const welcome = `<div class="nomobile">
    / \\<span data-color="orange">__</span>/<span data-color="orange">----</span>\\/   \\     <span data-color="lime">  / /  / _ \\ / ___// __ \`__ \\ / /_/ // __ \\ / ___// __/</span>
   /<span data-color="orange">---</span>\\/      \\    \\    <span data-color="lime"> / /  /  __// /   / / / / / // ____// /_/ // /   / /_</span>
  /     \\       \\    \\   <span data-color="lime">/_/   \\___//_/   /_/ /_/ /_//_/     \\____//_/    \\__/</span>
-<span data-color="cyan"><~~~~~~~~~~~~~~~~~~~~></span>        <span data-color="grey">===> Terminal Portfolio | Made By <a href="https://new.sx9.is-a.dev">sx9dev</a></span>
+<span data-color="cyan"><~~~~~~~~~~~~~~~~~~~~></span>        <span data-color="grey">===> Terminal Portfolio | Made By <a href="https://new.sx9.is-a.dev">sx9dev</a></span></div>
 
-</div>Type <span data-color="yellow">help</span> For List Of Available Commands
+Type <span data-color="yellow">help</span> For List Of Available Commands
 
 `;
 const sleep = (m) => new Promise((r) => setTimeout(r, m));
