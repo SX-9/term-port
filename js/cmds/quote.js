@@ -8,14 +8,16 @@ export default function(output) {
         'Happiness === When Your Code Runs Without Errors.',
         'Indentation matters, Semicolons are optional.',
         'Real programmers count from 0 (Except Lua).',
+        'I hate programming, I love programming.',
         'In Javascript, Everything is an object!',
         'If Your Code Works, Dont Touch It.',
         'Programming Is Painful And Fun!',
         'Theres No Place Like 127.0.0.1.',
-        '0.1 Plus 0.2 Is Not 0.3.',
         'Exiting Vim is a nightmare.',
+        '0.1 Plus 0.2 Is Not 0.3.',
         'I use Arch Linux btw.',
         'My code works! Why?',
+        'Hello World!',
     ];
     output.innerHTML += '"' + quotes[Math.floor(Math.random() * quotes.length + 10) % quotes.length] + '"';
 }

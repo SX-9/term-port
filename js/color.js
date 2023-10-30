@@ -1,5 +1,8 @@
+let i;
 setInterval(() => {
-    document.querySelectorAll('span').forEach((el) => {
+    let spans = document.querySelectorAll('span');
+    if (i === spans.length) return;
+    spans.forEach((el) => {
         let color = el.getAttribute('data-color');
         el.style.color = color;
     });
@@ -12,4 +15,5 @@ setInterval(() => {
             });
         }
     });
+    i = spans.length;
 });
