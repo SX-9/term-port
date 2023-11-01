@@ -1,6 +1,7 @@
 export default function(output) {
     output.innerHTML += `\
 Here Is A List Of Commands:
+    <b><span data-color="lime">donate</span> <span data-color="grey">-</span> <span data-color="yellow">Free Palestine!</span></b>
     <span data-color="lime">help</span> <span data-color="grey">-</span> <span data-color="yellow">Displays This.</span>
     <span data-color="lime">gui</span> <span data-color="grey">-</span> <span data-color="yellow">Activate Graphical Mode.</span>
     <span data-color="lime">about</span> <span data-color="grey">-</span> <span data-color="yellow">Who Is This?</span>
