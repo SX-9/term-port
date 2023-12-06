@@ -23,7 +23,6 @@ setTimeout(async () => {
     terminal.innerText += msg[i];
     await sleep(100);
   }
-  await sleep(1500);
   terminal.innerHTML += welcome;
   terminal.appendChild(prompt);
 }, 500);
@@ -43,7 +42,6 @@ window.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll(".help")
         .forEach((el) => el.parentElement.remove());
 
-      await sleep(250);
       if (command.value.includes("&&")) {
         let runs = command.value.split("&&");
         for (let cmds of runs) {

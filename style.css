@@ -16,7 +16,6 @@ label {
   font-family: 'Fira Code', monospace;
   color-scheme: dark;
   cursor: text;
-  scroll-behavior: smooth;
 }
 
 body {
